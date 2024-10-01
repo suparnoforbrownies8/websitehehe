@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends' Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .friend-list {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Friends</h1>
+
+    <div class="friend-list">
+        <p><strong>Alekhya</strong></p>
+        <p><strong>Sagnik</strong></p>
+        <p><strong>Soumalya</strong></p>
+    </div>
+
+    <button onclick="showMessage()">Click to See a Message</button>
+    <p id="message" class="hidden">You have great friends!</p>
+
+    <button onclick="changeColor()">Click to Change Background Color</button>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById("message");
+            if (message.classList.contains("hidden")) {
+                message.classList.remove("hidden");
+            } else {
+                message.classList.add("hidden");
+            }
+        }
+
+        function changeColor() {
+            const colors = ["#f4f4f9", "#dfe6e9", "#fab1a0", "#ffeaa7", "#74b9ff"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+
+</body>
+</html>
